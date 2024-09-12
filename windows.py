@@ -4,7 +4,6 @@ from tkinter.ttk import *
 from tkinter import messagebox
 from tkinter import ttk
 
-
 # Define data structures for accounts, transactions, and blocks.
 class Account:
     def __init__(self, address, balance):
@@ -27,10 +26,9 @@ accounts = []
 pending_transactions = []
 blockchain = []
 
-
 # Create a Tkinter GUI.
 window = Tk()
-window.title("SSD's BlockChain")
+window.title("Crypto Exchange Simulator")
 window.geometry('800x650')
 
 def create_account_starting(add):
@@ -214,8 +212,7 @@ initiate_transaction_button = tk.Button(send_money_tab, text="Initiate Transacti
 initiate_transaction_button.pack()
 commit_transaction_button = tk.Button(send_money_tab, text="Commit Transaction", command=commit_transaction)
 
-
-#to diplay list of accounts
+#to display list of accounts
 accounts_tree = ttk.Treeview(create_account_tab, columns=("Address", "Balance"), show="headings")
 accounts_tree.heading("Address", text="Account Address")
 accounts_tree.heading("Balance", text="Current Balance")
@@ -223,7 +220,7 @@ accounts_tree.column("Address", width=150)
 accounts_tree.column("Balance", width=100)
 accounts_tree.pack()
 
-#to diplay pending transactions
+#to display pending transactions
 transaction_tree = ttk.Treeview(send_money_tab, columns=("Sender", "Receiver","Amount"), show="headings")
 transaction_tree.heading("Sender", text="Sender")
 transaction_tree.heading("Receiver", text="Receiver")
@@ -244,7 +241,6 @@ refresh_button.pack()
 commit_transaction_button.pack()
 
 
-
 #put in miner section
 Address_label = tk.Label(mining_tab, text="Address of staker")
 Address_label.pack()
@@ -260,7 +256,7 @@ ADD_button = tk.Button(mining_tab, text="ADD", command=add_staker_function)
 ADD_button.pack()
 
 
-#to diplay stakers
+#to display stakers
 stakers_tree = ttk.Treeview(mining_tab, columns=("Address of staker","Amount staked"), show="headings")
 stakers_tree.heading("Address of staker", text="Address of staker")
 stakers_tree.heading("Amount staked", text="Amount staked")
@@ -276,7 +272,5 @@ mine_block_button.pack()
 # Status label.
 status_label = tk.Label(tabs_control, text="", fg="green")
 status_label.pack()
-
-# update_stakers_list()
 
 window.mainloop()
