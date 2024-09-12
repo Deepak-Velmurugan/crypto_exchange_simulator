@@ -33,7 +33,7 @@ window.geometry('800x650')
 
 def create_account_starting(add):
     address = add
-    initial_balance = 10000.0
+    initial_balance = 100000.0
     accounts.append(Account(address, initial_balance))
 
 create_account_starting('112A')
@@ -91,8 +91,11 @@ def commit_transaction():
         pending_transactions = pending_transactions[1:]  # Remove the first element
         update_transaction_list()  # Update the transaction list in the GUI
         update_status("Transaction committed successfully.")
+    elif sender_account and receiver_account not in accounts:
+        update_status("Transaction failed. Foreign account(s).")
+        pending_transactions.clear()
     else:
-        update_status("Transaction failed. Insufficient balance or invalid accounts.")
+        update_status("Transaction failed. Insufficient balance.")
         pending_transactions.clear()
 def mine_block():
     if len(blockchain) < 1:
@@ -120,7 +123,7 @@ def mine_block():
 
     # Update the status
     if winner_found:
-        update_status(f"Block mined successfully. Winner: {winner_staker}. Reward distributed: {highest_stake}.")
+        update_status(f"Block mined successfully. Winner: {winner_staker}. Reward ad: {highest_stake}.")
     else:
         update_status("Foreign account detected, so action declined")
 
