@@ -9,18 +9,21 @@ This tool basically helps you understand how the real world blockchin works. The
 ---
 ## Installation
 The developer can clone the repo using:
-``` git clone https://github.com/Deepak-Velmurugan/crypto_exchange_simulator.git
+``` cmd/terminal
+	git clone https://github.com/Deepak-Velmurugan/crypto_exchange_simulator.git
 ```
 
 ---
 ## Usage
 ### On windows: 
 We use tkinter as GUI for windows as it is well optimised for windows. The command goes like:
-```python3 windows.py
+```cmd
+	python3 windows.py
 ```
 ### On macOS:
 We use PyQt5 as GUI for macOS as tkinter in macOS assumes that the colors are not well saturated and PyQt5 is well optimised for macOS. The command goes like:
-```python3 macOS.py
+```terminal
+	python3 macOS.py
 ```
 
 ---
